@@ -6,8 +6,7 @@ import babelrc from 'babelrc-rollup';
 import json from 'rollup-plugin-json';
 
 export default {
-  entry: 'src/index.js',
-  format: 'umd',
+  input: 'src/index.js',
   plugins: [
     commonjs(),
     resolve(),
@@ -15,18 +14,18 @@ export default {
     eslint(),
     babel(babelrc({ addModuleOptions: false }))
   ],
-  targets: [
+  output: [
     {
-      dest: 'lib/index.js',
+      file: 'lib/index.js',
       format: 'umd',
-      moduleName: 'proxy-validator',
-      sourceMap: true
+      name: 'proxy-validator',
+      sourcemap: true
     },
     {
-      dest: 'lib/index.mjs',
+      file: 'lib/index.mjs',
       format: 'es',
-      sourceMap: true
+      sourcemap: true
     }
   ],
-  sourceMap: true
+  sourcemap: true
 };
