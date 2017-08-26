@@ -1,5 +1,7 @@
+// @flow
+import type { ValidationErrors } from './types';
 
-function ValidationError(errors) {
+function ValidationError(errors: ValidationErrors) {
   this.name = 'ValidationError';
   this.message = JSON.stringify(errors, null, '  ');
   this.stack = new Error().stack;

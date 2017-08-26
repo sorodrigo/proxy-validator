@@ -8,7 +8,7 @@ $ npm i proxy-validator
 ```
 
 ### Usage
-The API is fairly simple. Create a validator by providing a validator schema and/or a sanitizing schema.
+The API is fairly simple. Create a validator by providing a validation schema and/or a sanitizing schema.
 ```js
 import ProxyValidator from 'proxy-validator';
 
@@ -18,7 +18,7 @@ const validators = {
   name: {
     // The key corresponds to a validator function.
     isLength: {
-      // The body can be either an object, containing validating options and errorMessage...
+      // The value can be either an object, containing options and an errorMessage...
       options: {
         min: 6
       },
@@ -37,12 +37,16 @@ const validators = {
 };
 
 const sanitizers = {
+  // As with the validation, the sanitizing schema is formed by a a key/value pair.
   name: {
-    trim: ' '
+    // The key corresponds with the sanitizing function
+    trim: true // and the value can be either boolean (use defaults)
   },
   email: {
     normalizeEmail: {
-      all_lowercase: true
+      options: { // ...or a config options object.
+        all_lowercase: true
+      }
     }
   }
 };
