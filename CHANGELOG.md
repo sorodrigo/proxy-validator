@@ -1,5 +1,18 @@
+<a name="0.1.1"></a>
+# [0.1.1](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.1) (2017-08-26)
+
+### Bug Fixes
+
+* multiple validation rules not checked correctly ([0e74d3b](https://github.com/sorodrigo/proxy-validator/commit/0e74d3b))
+
+
+### Features
+
+* includes flow types + fixes sanitazing ([83b331f](https://github.com/sorodrigo/proxy-validator/commit/83b331f))
+
+
 <a name="0.1.0"></a>
-# [0.1.0](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.0) (2017-08-25)
+## [0.1.0](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.0) (2017-08-25)
 
 
 ### Bug Fixes

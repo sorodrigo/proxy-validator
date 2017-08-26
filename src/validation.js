@@ -1,27 +1,31 @@
+// @flow
+// $FlowFixMe
 import validator from 'validator';
+import type { ValidationRules, SanitizingRules } from './types';
 
 const GENERIC_ERROR_MESSAGE = 'Invalid input';
 
-export function checkRules(rules = {}, value) {
+export function checkRules(rules: ValidationRules = {}, value: string) {
   const errors = [];
-  let success = true;
-  Object.keys(rules)
-    .forEach((rule) => {
+  const success = Object.keys(rules)
+    .reduce((acc, rule) => {
       const validatorFn = validator[rule];
       const config = rules[rule];
-      const { options, errorMessage = GENERIC_ERROR_MESSAGE } = config;
-      success = validatorFn(value, options);
-      if (!success) errors.push({ errorMessage, value });
-    });
-
+      const options = (typeof config !== 'boolean') && config.options;
+      const errorMessage = (typeof config !== 'boolean') ? config.errorMessage : GENERIC_ERROR_MESSAGE;
+      const result = validatorFn(value, options);
+      if (!result) errors.push({ errorMessage, value });
+      return result && acc;
+    }, true);
   return { success, errors };
 }
 
-export function applySanitizers(sanitizers = {}, value) {
+export function applySanitizers(sanitizers: SanitizingRules = {}, value: mixed): mixed {
   return Object.keys(sanitizers)
     .reduce((result, sanitizer) => {
       const sanitizerFn = validator[sanitizer];
-      const options = sanitizers[sanitizer];
+      const config = sanitizers[sanitizer];
+      const options = (typeof config !== 'boolean') && config.options;
       return sanitizerFn(result, options);
     }, value) || value;
 }
