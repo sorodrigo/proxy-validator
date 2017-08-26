@@ -7,17 +7,16 @@ const GENERIC_ERROR_MESSAGE = 'Invalid input';
 
 export function checkRules(rules: ValidationRules = {}, value: string) {
   const errors = [];
-  let success = true;
-  Object.keys(rules)
-    .forEach((rule) => {
+  const success = Object.keys(rules)
+    .reduce((acc, rule) => {
       const validatorFn = validator[rule];
       const config = rules[rule];
       const options = (typeof config !== 'boolean') && config.options;
       const errorMessage = (typeof config !== 'boolean') ? config.errorMessage : GENERIC_ERROR_MESSAGE;
-      success = validatorFn(value, options);
-      if (!success) errors.push({ errorMessage, value });
-    });
-
+      const result = validatorFn(value, options);
+      if (!result) errors.push({ errorMessage, value });
+      return result && acc;
+    }, true);
   return { success, errors };
 }
 
