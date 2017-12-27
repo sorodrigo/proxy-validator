@@ -1,3 +1,13 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/sorodrigo/proxy-validator/compare/v0.1.2...v0.1.3) (2017-12-27)
+
+
+### Bug Fixes
+
+* publishing to npm error ([8117dc3](https://github.com/sorodrigo/proxy-validator/commit/8117dc3))
+
+
+
 <a name="0.1.2"></a>
 # [0.1.2](https://github.com/sorodrigo/proxy-validator/compare/v0.1.1...v0.1.2) (2017-12-27)
 
