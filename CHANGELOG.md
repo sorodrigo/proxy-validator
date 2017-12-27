@@ -1,5 +1,21 @@
+<a name="0.1.2"></a>
+# [0.1.2](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.2) (2017-12-27)
+
+### Bug Fixes
+
+* sanitize first -> validate second, makes sanitizing optional ([cba26eb](https://github.com/sorodrigo/proxy-validator/commit/cba26eb))
+* updates index + bumps dependencies (minify bundle) ([6c34dab](https://github.com/sorodrigo/proxy-validator/commit/6c34dab))
+
+
+### Features
+
+* refactors index example to proper examples dir ([8b2ac71](https://github.com/sorodrigo/proxy-validator/commit/8b2ac71))
+
+
+
 <a name="0.1.1"></a>
-# [0.1.1](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.1) (2017-08-26)
+## [0.1.1](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.1) (2017-08-26)
+
 
 ### Bug Fixes
 
