@@ -52,6 +52,5 @@ function proxyTestDrive(name) {
   }
 }
 proxyTestDrive('Mike');
-//
+proxyTestDrive('   JENNY');
 proxyTestDrive('   MICHAEL');
-// success! { name: 'MICHAEL' };

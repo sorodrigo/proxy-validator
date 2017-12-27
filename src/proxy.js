@@ -7,13 +7,21 @@ import type { ProxyFactory } from './types';
 export default function ProxyValidator(schema: Object, sanitizersSchema: Object): ProxyFactory {
   const handler = {
     set(object: Object, prop: string, value: string): boolean {
-      const { [prop]: rules } = schema;
-      const { success, errors } = checkRules(rules, value);
-      if (success) {
+      let sanitizedValue = value;
+      if (sanitizersSchema) {
         const { [prop]: sanitizers } = sanitizersSchema;
-        object[prop] = applySanitizers(sanitizers, value);
+        // save sanitized value for later validation
+        sanitizedValue = applySanitizers(sanitizers, value);
+      }
+
+      // apply validation rules on sanitizedValue
+      const { [prop]: rules } = schema;
+      const { success, errors } = checkRules(rules, sanitizedValue);
+      if (success) {
+        object[prop] = sanitizedValue;
         return success;
       }
+
       throw new ValidationError({ [prop]: errors });
     }
   };

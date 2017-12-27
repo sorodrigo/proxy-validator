@@ -5,7 +5,7 @@ import type { ValidationRules, SanitizingRules } from './types';
 
 const GENERIC_ERROR_MESSAGE = 'Invalid input';
 
-export function checkRules(rules: ValidationRules = {}, value: string) {
+export function checkRules(rules: ValidationRules = {}, value: mixed) {
   const errors = [];
   const success = Object.keys(rules)
     .reduce((acc, rule) => {
