@@ -1,5 +1,5 @@
 <a name="0.1.2"></a>
-# [0.1.2](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.2) (2017-12-27)
+# [0.1.2](https://github.com/sorodrigo/proxy-validator/compare/v0.1.1...v0.1.2) (2017-12-27)
 
 ### Bug Fixes
 
@@ -14,7 +14,7 @@
 
 
 <a name="0.1.1"></a>
-## [0.1.1](https://github.com/sorodrigo/proxy-validator/compare/0434dd6...v0.1.1) (2017-08-26)
+## [0.1.1](https://github.com/sorodrigo/proxy-validator/compare/v0.1.0...v0.1.1) (2017-08-26)
 
 
 ### Bug Fixes
