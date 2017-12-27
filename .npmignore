@@ -1,4 +1,6 @@
+.idea
 .babelrc
 .eslintrc.js
 .editorconfig
 .eslintignore
+examples/**
