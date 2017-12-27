@@ -1,18 +1,5 @@
-# proxy-validator
+import ProxyValidator from '../src/index';
 
-Small package that leverages the power of ES6 Proxy to validate and sanitize objects.
-
-### Installation
-```bash
-$ npm i proxy-validator
-```
-
-### Usage
-The API is fairly simple. Create a validator by providing a validation schema and/or a sanitizing schema.
-```js
-import ProxyValidator from 'proxy-validator';
-
-// The schema props correspond to the props that will be validated.
 const validators = {
   // Define a set of rules to apply for each prop, each rule is formed by a key and a value.
   name: {
@@ -51,16 +38,19 @@ const sanitizers = {
   }
 };
 
-// Creates a validator
 const ContactValidator = ProxyValidator(validators, sanitizers);
 
 // Creates a proxy that will enforce the validator rules.
-const contact = ContactValidator();
+const withValidationContact = ContactValidator();
 
-contact.name = 'Mike'; // throws errors
-contact.name = ' MICHAEL';
-console.log(contact); // { name: 'MICHAEL' };
-```
-
-### Validators
-The validation is based on the amazing lib `validator` by **chriso**. Find the complete list of available validators and sanitizers in [here](https://github.com/chriso/validator.js).
+function proxyTestDrive(name) {
+  try {
+    withValidationContact.name = name;
+    console.log('success!', withValidationContact);
+  } catch (e) {
+    console.error('Whoops!', e.message);
+  }
+}
+proxyTestDrive('Mike');
+proxyTestDrive('   JENNY');
+proxyTestDrive('   MICHAEL');
