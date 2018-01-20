@@ -19,7 +19,7 @@ export default {
     commonjs(),
     resolve(),
     json(),
-    babel(babelrc({ addModuleOptions: false, addExternalHelpersPlugin: true })),
+    babel(babelrc({ addModuleOptions: false })),
     uglify({}, minify)
   ],
   output: [
