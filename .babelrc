@@ -1,8 +1,19 @@
 {
-  "presets": [
-    ["env", { "modules": false }],
-    "stage-3",
-    "flow"
-  ],
-  "plugins": ["external-helpers"]
+  "env": {
+    "test": {
+      "presets": [
+        ["env"],
+        "stage-3",
+        "flow"
+      ]
+    },
+    "production": {
+      "presets": [
+        ["env", { "modules": false }],
+        "stage-3",
+        "flow"
+      ],
+      "plugins": ["external-helpers"],
+    }
+  }
 }

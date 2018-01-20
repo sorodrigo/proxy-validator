@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/sorodrigo/proxy-validator.svg?branch=master)](https://travis-ci.org/sorodrigo/proxy-validator)
 # proxy-validator
 
 Small package that leverages the power of ES6 Proxy to validate and sanitize objects.
