@@ -1,6 +1,11 @@
+[![Build Status](https://travis-ci.org/sorodrigo/proxy-validator.svg?branch=master)](https://travis-ci.org/sorodrigo/proxy-validator)
 # proxy-validator
 
 Small package that leverages the power of ES6 Proxy to validate and sanitize objects.
+
+Learn More, read the article:
+
+[How I made a validation library using ES6 Proxy](https://hackernoon.com/how-i-made-a-validation-library-using-es6-proxy-59df82c1a4c0)
 
 ### Installation
 ```bash
