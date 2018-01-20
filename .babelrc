@@ -13,7 +13,7 @@
         "stage-3",
         "flow"
       ],
-      "plugins": ["external-helpers"],
+      "plugins": ["external-helpers"]
     }
   }
 }
