@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/sorodrigo/proxy-validator.svg?branch=master)](https://travis-ci.org/sorodrigo/proxy-validator)
 # proxy-validator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sorodrigo/proxy-validator.svg)](https://greenkeeper.io/)
+
 Small package that leverages the power of ES6 Proxy to validate and sanitize objects.
 
 Learn More, read the article:
