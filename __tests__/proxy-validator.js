@@ -1,5 +1,5 @@
-import ProxyValidator  from '../src/index';
-import { ValidationError } from '../src/error';
+import ProxyValidator from '../src/index';
+import ValidationError from '../src/error';
 
 const validators = {
   name: {
@@ -10,8 +10,8 @@ const validators = {
       errorMessage: 'Minimum length 6 characters.'
     },
     isUppercase: true,
-    isAlphanumeric: true,
-  },
+    isAlphanumeric: true
+  }
 };
 
 const sanitizers = {
@@ -20,12 +20,12 @@ const sanitizers = {
   }
 };
 
+const ContactValidator = ProxyValidator(validators, sanitizers);
+const contact = ContactValidator();
+
 function assignName(name) {
   contact.name = name;
 }
-
-const ContactValidator = ProxyValidator(validators, sanitizers);
-const contact = ContactValidator();
 
 test('one validation rule fails', () => {
   expect(() => assignName('MIKE')).toThrow(ValidationError);
@@ -52,7 +52,3 @@ test('validation succeed w/ sanitizing', () => {
   assignName('     MICHAEL');
   expect(contact.name).toBe('MICHAEL');
 });
-
-
-
-

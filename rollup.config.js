@@ -5,11 +5,11 @@ import babelrc from 'babelrc-rollup';
 import json from 'rollup-plugin-json';
 import cleanup from 'rollup-plugin-cleanup';
 import flow from 'rollup-plugin-flow';
-import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
+import { terser } from 'rollup-plugin-terser';
 
-
-const dev = process.env.NODE_ENV !== 'production';
+const terserOptions = {
+  safari10: true
+};
 
 export default {
   input: 'src/index.js',
@@ -19,21 +19,21 @@ export default {
     commonjs(),
     resolve(),
     json(),
-    babel(babelrc({ addModuleOptions: false })),
-    uglify({}, minify)
+    babel({
+      ...babelrc({ addModuleOptions: false }),
+      exclude: 'node_modules/**'
+    }),
+    terser(terserOptions)
   ],
   output: [
     {
       file: 'lib/index.js',
       format: 'umd',
-      name: 'proxy-validator',
-      sourcemap: dev
+      name: 'proxy-validator'
     },
     {
       file: 'lib/index.mjs',
-      format: 'es',
-      sourcemap: dev
+      format: 'es'
     }
-  ],
-  sourcemap: dev
+  ]
 };
