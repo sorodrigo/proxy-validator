@@ -9,8 +9,9 @@ const validators = {
       },
       errorMessage: 'Minimum length 6 characters.'
     },
-    isUppercase: true
-  }
+    isUppercase: true,
+    isAlphanumeric: true,
+  },
 };
 
 const sanitizers = {

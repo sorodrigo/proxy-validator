@@ -13,7 +13,7 @@ export function checkRules(rules: ValidationRules = {}, value: mixed) {
       const config = rules[rule];
       const options = (typeof config !== 'boolean') && config.options;
       const errorMessage = (typeof config !== 'boolean') ? config.errorMessage : GENERIC_ERROR_MESSAGE;
-      const result = validatorFn(value, options);
+      const result = options ? validatorFn(value, options) : validatorFn(value);
       if (!result) errors.push({ errorMessage, value });
       return result && acc;
     }, true);
