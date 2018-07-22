@@ -1,6 +1,6 @@
 {
   "name": "proxy-validator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Small package that leverages the power of ES6 Proxy to validate and sanitize objects.",
   "main": "lib/index.js",
   "scripts": {
