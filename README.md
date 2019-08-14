@@ -5,7 +5,7 @@ Small package that leverages the power of ES6 Proxy to validate and sanitize obj
 
 Learn More, read the article:
 
-[How I made a validation library using ES6 Proxy](https://hackernoon.com/how-i-made-a-validation-library-using-es6-proxy-59df82c1a4c0)
+[How I made a validation library using ES6 Proxy](https://medium.com/hackernoon/how-i-made-a-validation-library-using-es6-proxy-59df82c1a4c0)
 
 ### Installation
 ```bash
